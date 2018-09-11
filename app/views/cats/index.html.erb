@@ -1,0 +1,8 @@
+<h1>All the Cats</h1>
+
+<ul><% @cats.each do |cat|  %>
+      <%= render 'catattributes', cat: cat %>
+      <a href="<%= cat_url(cat) %>">Find This Cat!</a>
+    <% end %>
+
+</ul>

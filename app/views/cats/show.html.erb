@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th colspan="1"> <%= @cat.name %>'s Attribute Table</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> <%= render 'catattributes', cat: @cat %> </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="1">What a Great Cat!
+              <a href=" <%= cats_url %> ">Back to All Cats</a>
+             </td>
+        </tr>
+    </tfoot>
+</table>
