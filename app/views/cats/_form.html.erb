@@ -1,6 +1,9 @@
-
-<form action="<%= cat_url(@cat) %>" method="post">
+<%if cat.color.nil?  %>
+<form action="<%= cats_url %>" method="post">
+<%else %>
+<form action="<%= cat_url(cat) %>" method="post">
   <input type="hidden" name="_method" value="patch">
+  <% end %>
   <label>Name 
     <input type="text" name="cat[name]" value="<%= cat.name %>">
     

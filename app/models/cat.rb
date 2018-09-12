@@ -18,4 +18,8 @@ class Cat < ApplicationRecord
   validates :color, inclusion: {in: COLORS}
   validates :sex, inclusion: {in: ['M','F']}
   
+  has_many :rental_requests,
+  foreign_key: :cat_id,
+  class_name: :CatRentalRequest,
+  dependent: :destroy
 end 

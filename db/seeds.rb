@@ -5,11 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-ActiveRecord::Base.transaction do
+
+  Cat.destroy_all
   cats = Cat.create([
     {name: 'Fluffy', sex: 'F', color: 'grey', birth_date: '1/1/2016', description: 'The fluffiest cat around!' },
     {name: 'Puma', sex: 'M', color: 'black', birth_date: '1/1/2016', description: 'The scariest cat around!' },
     {name: 'Tom-Tom', sex: 'M', color: 'orange', birth_date: '3/9/2011', description: 'The oldest cat around!' },
-    {name: 'Steve', sex: 'F', color: 'calico', birth_date: '8/29/2018', description: 'The cohort cat!' }
+    {name: 'Steve', sex: 'F', color: 'calico', birth_date: '29/8/2018', description: 'The cohort cat!' }
     ])
-end
+    
+  CatRentalRequest.destroy_all
+    
+  rental_requests = CatRentalRequest.create([
+    {cat_id: cats[1].id, start_date: '25/3/2017', end_date: '27/3/2017', status: 'PENDING'},
+    {cat_id: cats[1].id, start_date: '26/3/2017', end_date: '29/3/2017', status: 'PENDING'},
+    {cat_id: cats[1].id, start_date: '27/3/2017', end_date: '29/3/2017', status: 'PENDING'},
+    {cat_id: cats[1].id, start_date: '24/3/2017', end_date: '26/3/2017', status: 'PENDING'},
+    {cat_id: cats[2].id, start_date: '25/3/2017', end_date: '27/3/2017', status: 'PENDING'}
+    ])  
+    
+    
